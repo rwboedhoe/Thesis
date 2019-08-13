@@ -1,0 +1,256 @@
+\documentclass[whitelogo]{tudelft-report}
+
+\usepackage{natbib}
+\usepackage{changes}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{titlesec}
+\usepackage{cite}
+\usepackage{tikz}
+
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{a4wide,times}
+\usepackage{listings}
+\usepackage{lastpage}
+\usepackage{fancy hdr}
+%\usepackage{placeins}
+\usepackage{arydshln}
+\usepackage{hyperref}
+%\usepackage[numbered,autolinebreaks,useliterate]{mcode}
+\usepackage{mathtools}
+\usepackage[makeroom]{cancel}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\usepackage{pgfplots}
+\usepackage{fp}
+
+
+\usetikzlibrary{calc,fadings,decorations.pathreplacing,decorations.pathmorphing,patterns}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\DeclareMathOperator{\taninv}{sin^{-1}}
+\usepackage{gensymb}
+\usepackage[export]{adjustbox}
+%\usepackage{slashbox}
+\usepackage{booktabs,makecell}
+\usepackage{floatrow}
+\usepackage{commath}
+\usepackage[section]{placeins}
+\usepackage{tikz}
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+\usepackage{amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsfonts,amssymb,amsthm, bm}
+
+\newcommand\w[1]{\makebox[2.5em]{$#1$}}
+
+\lstset{language=Matlab,%
+	%basicstyle=\color{red},
+	breaklines=true,%
+	morekeywords={matlab2tikz},
+	keywordstyle=\color{blue},%
+	morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+	identifierstyle=\color{black},%
+	stringstyle=\color{mylilas},
+	commentstyle=\color{mygreen},%
+	showstringspaces=false,%without this there will be a symbol in the places where there is a space
+	numbers=left,%
+	numberstyle={\footnotesize \color{black}},% size of the numbers
+	numbersep=9pt, % this defines how far the numbers are from the text
+	emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+	%emph=[2]{word1,word2}, emphstyle=[2]{style},    
+	basicstyle=\footnotesize	,
+}
+\input{arduinoLanguage.tex}
+
+
+\floatsetup[table]{capposition=top}
+
+\DeclareMathOperator{\sinc}{sinc}
+\DeclareMathOperator{\si}{si}
+\usepackage[
+separate-uncertainty = true,
+multi-part-units = repeat
+]{siunitx}
+%\usepackage[]{natbib}
+
+\usepackage{xcolor}
+
+\usepackage{floatrow}%
+\usepackage{lipsum}
+\usepackage{gensymb}
+
+
+\usepackage{caption}
+\usepackage{array,colortbl,xcolor}
+
+
+\makeatletter
+\newcommand{\vo}{\vec{o}\@ifnextchar{^}{\,}{}}
+\makeatother
+
+\newlength\Origarrayrulewidth
+\newcommand{\Cline}[1]{%
+	\noalign{\global\setlength\Origarrayrulewidth{\arrayrulewidth}}%
+	\noalign{\global\setlength\arrayrulewidth{2pt}}\cline{#1}%
+	\noalign{\global\setlength\arrayrulewidth{\Origarrayrulewidth}}%
+}
+
+\newcommand\Thickvrule[1]{%
+	\multicolumn{1}{!{\vrule width 2pt}c!{\vrule width 2pt}}{#1}%
+}
+
+\setlength{\parindent}{0pt}
+\newcommand{\forceindent}{\leavevmode{\parindent=0pt\indent}}
+
+
+
+
+\DeclareColorBox{shaded}{\colorbox{gray!5}}% Shade is 15% black
+\floatsetup{framestyle=colorbox,colorframeset=shaded,framefit=yes,heightadjust=all,framearound=row}
+
+
+\geometry{
+	a4paper,
+	total={160mm,252mm},
+	left=25mm,
+	top=25mm,
+}
+\definecolor{shadecolor}{gray}{.9}
+%\begin{document}
+\newcommand{\R}{\mathbb{R}}
+
+
+
+
+\begin{document}
+
+%% Use Roman numerals for the page numbers of the title pages and table of
+%% contents.
+\frontmatter
+
+%% Uncomment following 19 lines for a cover with a picture on the lower half only
+\title[tudelft-white]{Title}
+\subtitle[tudelft-cyan]{Optional subtitle}
+\author[tudelft-white]{J.\ Random Author}
+\affiliation{Technische Universiteit Delft}
+\coverimage{cover.jpg}
+\titleoffsetx{10cm}
+\titleoffsety{10cm}
+\afiloffsetx{1cm}
+\afiloffsety{18cm}
+\covertext[tudelft-white]{
+    \textbf{Cover Text} \\
+    possibly \\
+    spanning 
+    multiple 
+    lines
+    \vfill
+    ISBN 000-00-0000-000-0
+}
+\makecover
+
+%% Uncomment following 16 lines for a cover with a picture on the lower half only
+\title[tudelft-white]{Title}
+\subtitle[tudelft-black]{Optional subtitle}
+\author[tudelft-white]{J.\ Random Author}
+\affiliation{Technische Universiteit Delft}
+\coverimage{tank.jpg}
+\covertext[tudelft-white]{
+    \textbf{Cover Text} \\
+    possibly \\
+    spanning 
+    multiple 
+    lines
+    \vfill
+    ISBN 000-00-0000-000-0
+}
+\setpagecolor{tudelft-cyan}
+%\makecover[split]
+
+
+%% Include an optional title page.
+\input{title}
+
+\input{preface}
+
+\tableofcontents
+
+%% Use Arabic numerals for the page numbers of the chapters.
+\mainmatter
+
+\input{chapter-1}
+
+%% Use letters for the chapter numbers of the appendices.
+
+
+
+
+
+
+
+
+
+
+
+
+\frontmatter
+
+
+% %% Uncomment following 19 lines for a cover with a picture on the lower half only
+% \title[tudelft-white]{Title}
+% \subtitle[tudelft-cyan]{Optional subtitle}
+% \author[tudelft-white]{J.\ Random Author}
+% \affiliation{Technische Universiteit Delft}
+% \coverimage{cover.jpg}
+% \titleoffsetx{10cm}
+% \titleoffsety{10cm}
+% \afiloffsetx{1cm}
+% \afiloffsety{18cm}
+% \covertext[tudelft-white]{
+% 	\textbf{Cover Text} \\
+% 	possibly \\
+% 	spanning 
+% 	multiple 
+% 	lines
+% 	\vfill
+% 	ISBN 000-00-0000-000-0
+% }
+% \makecover
+
+
+
+	\section{Abstract}
+	\newpage
+% 	\section*{Introduction}
+%	\subsection*{Overview}
+%	For the current study, the thesis objective was to create a device that can measure ROM during THA without the limitations of current devices. To do this the study will address the following research questions:
+%	\begin{enumerate}
+%		\item What device is needed to accurately measure ROM?
+%		\item Which bony landmarks need to be identified?
+%		\item How can the device stay aligned with those bony landmarks? 
+%		\item How can the device be fixated on the leg during the measurement without the interference of the surgeon?
+%	\end{enumerate}
+%	
+%	\subsection*{Hypotheses}
+%	The following hypotheses
+%	For the current study, the thesis objective was to create a device that can measure ROM during THA without the limitations of current devices. To do this the study will address the following research questions:
+%	\begin{enumerate}
+%		\item What device is needed to accurately measure ROM?
+%		\item Which bony landmarks need to be identified?
+%		\item How can the device stay aligned with those bony landmarks? 
+%		\item How can the device be fixated on the leg during the measurement without the interference of the surgeon?
+%	\end{enumerate}
+%	\subsection*{Aims}
+%	The aim is to make a device that can measure the range of motion of the hip during total hip arthroplasty.
+
+\end{document}
